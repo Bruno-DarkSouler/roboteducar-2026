@@ -1,0 +1,26 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html{
+  height: 100%;
+}
+
+body{
+  min-height: 100%;
+}
+
+#root{
+  width: 100% !important;
+}
+
+.mapa{
+  height: 10rem;
+  width: 14rem;
+  display: inline-block;
+}
+
+.scroll_horizontal{
+  display: block;
+}
