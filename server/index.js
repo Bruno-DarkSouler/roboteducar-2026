@@ -3,14 +3,13 @@ import { Server } from 'socket.io';
 import { createServer } from 'node:http';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { isModuleNamespaceObject } from 'node:util/types';
 
 const app = express();
 app.set({"Content-type:" : "application/javascript"})
 const server = createServer(app);
 const io = new Server(server);
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
-console.log(__dirname);
 
 app.get('/', (req, res) => {
   // res.sendFile(join(__dirname, 'envio.html'));
@@ -18,11 +17,20 @@ app.get('/', (req, res) => {
 })
 
 io.on('connection', (socket) => {
-  socket.on('chat message', (msg) => {
-    io.emit('chat message', msg);
-  });
 
   io.emit('Hola a', "Tomori", 10);
+
+  socket.on("bateria", (dron) => {
+    io.emit("bateria", dron, Math.floor(Math.random() * 100))
+  });
+
+  socket.on("pos", (dron) => {
+    let posicion = {
+      x: Math.floor(Math.random() * 100),
+      y: Math.floor(Math.random() * 100)
+    }
+    io.emit("pos", dron, posicion);
+  }); 
 
   socket.on('disconnect', () => {
     console.log('Un usuario se desconecto');

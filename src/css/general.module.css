@@ -19,8 +19,10 @@ body{
   height: 10rem;
   width: 14rem;
   display: inline-block;
+  background-color: tomato;
 }
 
 .scroll_horizontal{
   display: block;
+  overflow: auto;
 }

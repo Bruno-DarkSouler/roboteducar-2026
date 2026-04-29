@@ -1,0 +1,57 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html{
+  height: 100%;
+}
+
+body{
+  min-height: 100%;
+}
+
+#root{
+  width: 100% !important;
+}
+
+.mapa{
+  height: 10rem;
+  width: 14rem;
+  display: inline-block;
+  background-color: tomato;
+}
+
+.scroll_horizontal{
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.grilla5050{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  height: 100vh;
+}
+
+.contenedor_elemento_grilla{
+  padding: 1rem;
+}
+
+#mapas_drones, #datos_dron{
+  background-color: slategrey;
+}
+
+
+
+
+
+#pos_dron{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#pos_dron div{
+  width: 100%;
+  text-align: left;
+  padding: 0 0 0 0.5rem;
+}
